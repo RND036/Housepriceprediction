@@ -1,29 +1,31 @@
-House Price Prediction using Machine Learning
 
-Overview
+#  House Price Prediction using Machine Learning
 
 This project is a house price prediction system built using Django and Machine Learning. The model is trained using historical house price data and employs a Linear Regression model to make price predictions.
 
-Technologies Used
 
-Python
+## Features
 
-Django (Web framework)
+- Train a machine learning model on house price data.
+- Predict house prices based on user input features.
+- Deploy a Django web application for user interaction.
+- Interactive UI for users to input features.
 
-Pandas (Data manipulation)
 
-NumPy (Numerical operations)
 
-Matplotlib & Seaborn (Data visualization)
+## Tech Stack
 
-Scikit-learn (Machine Learning - Linear Regression, train-test split, model evaluation)
+- Python - Programming Language
 
-Joblib (Model saving & loading)
+- Django - Web Framework
 
-Features
+- Pandas - Data Manipulation
 
-Train a machine learning model on house price data.
+- NumPy - Numerical Operations
 
-Predict house prices based on user input features.
+- Matplotlib & Seaborn - Data Visualization
 
-Deploy a Django web application for user interaction.
+- Scikit-learn - Machine Learning (Linear Regression, Train-Test Split, Model Evaluation)
+
+- Joblib - Model Saving & Loading
+
