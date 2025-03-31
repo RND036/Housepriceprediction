@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict House Price</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        body {
+            background: url("{% static 'house3.jpg' %}") no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+        }
+        .button {
+            display: inline-block;
+            background: #ff7f50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background: #ff6347;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .refresh-button {
+            background: #3498db;
+            margin-top: 10px;
+            display: inline-block;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .refresh-button:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <header>
+            <h1>Predict House Price</h1>
+            <p>Enter following values for predic price</p>
+        </header>
+        <main>
+            <form action="result/" >
+                {% csrf_token %}
+                <input type="number" step="any" name="income" placeholder="Avg Area Income" required>
+                <input type="number" step="any" name="age" placeholder="Avg Area House Age" required>
+                <input type="number" step="any" name="rooms" placeholder="Avg Area Number of Rooms" required>
+                <input type="number" step="any" name="bedrooms" placeholder="Avg Area Number of Bedrooms" required>
+                <input type="number" step="any" name="population" placeholder="Avg Area Population" required>
+                <button type="submit" class="button">Predict Price</button>
+            </form>
+        </main>
+        <div>
+            <h2>{{result2}}</h2>
+        </div>
+        <!-- Refresh Button with Redirect -->
+        <button class="refresh-button" onclick="window.location.href='/predict'">
+            Re-Predict Price
+        </button>
+        
+
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 House Price Prediction. All rights reserved.</p>
+    </footer>
+</body>
+</html>
