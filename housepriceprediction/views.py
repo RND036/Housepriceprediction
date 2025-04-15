@@ -5,7 +5,7 @@ from django.shortcuts import redirect, render
 model = joblib.load("housepricepredict.joblib")
 
 def home(request):
-    return render(request, "home.html")
+    return render(request, "index.html")
 
 def predict(request):
     return render(request, "predict.html")
